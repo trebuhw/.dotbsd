@@ -62,6 +62,10 @@ else
 fi
 
 echo "==> Change shell to fish..."
-sudo chsh -s /usr/local/bin/fish "$USER" && echo "Wyloguj się, aby zastosować nową powłokę"
+su -
+sudo echo "/usr/local/bin/fish" >>/etc/shells
+sudo pwd_mkdb -p /etc/master.passwd
+sudo pw usermod $USER -s /usr/local/bin/fish
+# sudo chsh -s /usr/local/bin/fish "$USER" && echo "Wyloguj się, aby zastosować nową powłokę"
 
 echo "==> Done! Uruchom ponownie: sudo reboot"
