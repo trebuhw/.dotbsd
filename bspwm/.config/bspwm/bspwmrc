@@ -1,0 +1,76 @@
+#! /bin/sh
+
+bspc monitor -d 1 2 3 4 5
+
+bspc config border_width			1
+bspc config window_gap				5
+
+bspc config split_ratio				0.5
+bspc config single_monocle			false
+bspc config focus_follows_pointer	true
+bspc config borderless_monocle		true
+bspc config gapless_monocle			true
+
+bspc config presel_feedback_color "#313244"
+bspc config active_border_color		"#89b4fa"
+bspc config focused_border_color "#89b4fa"
+bspc config normal_border_color "#313144"
+
+# bspc rule -a "*" split_dir=east
+bspc rule -a \* rectangle 1600×900+0+0 center=true
+bspc rule -a qimgv state=floating rectangle=910x660+0+0
+bspc rule -a Xarchiver state=floating layer=normal rectangle=910x660+0+0
+bspc rule -a st state=floating layer=normal
+bspc rule -a scratchpad state=floating layer=normal
+bspc rule -a pulsemixer state=floating layer=normal
+bspc rule -a Galculator state=floating layer=normal rectangle=470x520+0+0
+bspc rule -a mpv state=floating layer=normal rectangle 1920x1080+0+0
+bspc rule -a Pavucontrol:pavucontrol state=floating 
+bspc rule -a Nwg-look:nwg-look state=floating layer=normal rectangle=910x660+0+0
+bspc rule -a Gimp desktop='^9' follow=on
+bspc rule -a obs desktop='^10' follow=on
+bspc rule -a discord desktop='^8' follow=on
+
+## Ekran rodzielczość
+# xrandr --output e-DP-1 --mode 1920x1080 &
+# xrandr --output Virtual-1 --mode 1920x1080 &
+
+## Polybar or tint
+~/.config/bspwm/polybar/polybar-bspwm &
+
+## Cursors
+xsetroot -cursor_name left_ptr &
+
+## Policykit
+/usr/local/libexec/polkit-gnome-authentication-agent-1 &
+
+## Numlock - on
+numlockx &
+
+## Polskie znaki
+setxkbmap pl &
+
+## Clipboard
+clipmenud &
+/home/hubert/.config/bspwm/scripts/clipboard-rofi &
+
+## Powiadomienia
+dunst -config ~/.config/bspwm/dunst/dunstrc &
+
+## Tapeta
+# picom --config ~/.config/bspwm/picom/picom.conf -b &
+feh --bg-fill ~/Obrazy/Wallpaper/!current.png &
+
+## apps for systray if enabled
+# Sound
+# volumeicon &
+
+# Network
+# nm-applet &
+
+## (re)load sxhkd for keybinds
+if hash sxhkd >/dev/null 2>&1; then
+	pkill sxhkd
+	sleep 0.5
+	sxhkd -c "$HOME/.config/bspwm/sxhkd/sxhkdrc" &
+fi
