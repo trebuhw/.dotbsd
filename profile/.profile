@@ -8,6 +8,26 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+# Locale pl > możesz w terminalu wkleic i  sprwadzić polecenia
+# terminal >  setenv LANG pl_PL.UTF-8
+# terminal > setenv LC_ALL pl_PL.UTF-8
+
+# Podstawowe
+export LANG=pl_PL.UTF-8
+export LC_ALL=pl_PL.UTF-8
+export LC_CTYPE=pl_PL.UTF-8
+export LC_MESSAGES=pl_PL.UTF-8
+
+# Rozszeżone
+# export LANG=pl_PL.UTF-8
+# export LC_CTYPE="pl_PL.UTF-8"
+#export LC_COLLATE="pl_PL.UTF-8"
+# export LC_TIME="pl_PL.UTF-8"
+# export LC_NUMERIC="pl_PL.UTF-8"
+# export LC_MONETARY="pl_PL.UTF-8"
+# export LC_MESSAGES="pl_PL.UTF-8"
+# export LC_ALL=pl_PL.UTF-8
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
   # include .bashrc if it exists

@@ -16,11 +16,11 @@ sudo pkg update -f
 
 echo "==> Installing packages..."
 sudo pkg install -y \
-  bat btop bspwm chromium dbus dunst eza fastfetch feh firefox \
+  bat btop bspwm chromium clipmenu dbus dunst eza fastfetch feh firefox \
   fish ghostty git gthumb gvfs kitty neovim nsxiv \
   numlockx nwg-look picom polybar polkit-gnome py311-trash-cli rofi \
   sddm starship stow sxhkd thunar thunar-archive-plugin \
-  tree unzip vim xarchiver xclip xdg-user-dirs xorg xorg-apps \
+  tree unzip vim xarchiver xclip xdg-user-dirs xdotool xorg xorg-apps \
   xorg-drivers xorg-fonts xinit xsetroot xrandr yazi \
   zathura zoxide
 
@@ -39,12 +39,15 @@ sudo sysrc sddm_enable="YES"
 echo "==> Updating XDG user dirs..."
 env LANG=pl_PL.UTF-8 xdg-user-dirs-update --force
 
+echo "==> backup .profie..."
+cp ~/.profile ~/.profile.bak
+
 echo "==> Stowing dotfiles..."
 if [ -d "$HOME/.dotbsd" ]; then
   cd "$HOME/.dotbsd"
   stow \
     bat bin bspwm btop fastfetch fish fonts \
-    ghostty icons kitty nsxiv nvim scripts shrc starship themes \
+    ghostty icons kitty nsxiv nvim profile scripts shrc starship themes \
     vim wallpaper xprofile xinitrc yazi zathura
 else
   echo "!! Directory ~/.dotbsd not found, skipping stow"
