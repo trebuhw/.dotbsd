@@ -8,9 +8,9 @@
 
 # Sprawdz czy uruchomiono jako root
 if [ "$(id -u)" -ne 0 ]; then
-    echo "BLAD: Uruchom skrypt jako root:"
-    echo "  su -c 'sh setup-resolution-vm.sh'"
-    exit 1
+  echo "BLAD: Uruchom skrypt jako root:"
+  echo "  su -c 'sh setup-resolution-vm.sh'"
+  exit 1
 fi
 
 echo "============================================"
@@ -22,14 +22,14 @@ echo ""
 echo "[1/2] Aktualizacja /boot/loader.conf..."
 
 if grep -q "efi_max_resolution" /boot/loader.conf; then
-    echo "      Wpisy juz istnieja, pomijam."
+  echo "      Wpisy juz istnieja, pomijam."
 else
-    cat >> /boot/loader.conf << 'LOADER'
+  cat >>/boot/loader.conf <<'LOADER'
 kern.vty=vt
 hw.vga.textmode=0
 efi_max_resolution="1920x1080"
 LOADER
-    echo "      Dodano wpisy do /boot/loader.conf"
+  echo "      Dodano wpisy do /boot/loader.conf"
 fi
 
 # 2. Utworz katalog xorg.conf.d jesli nie istnieje
@@ -38,7 +38,7 @@ echo "[2/2] Tworzenie konfiguracji Xorg..."
 
 mkdir -p /usr/local/etc/X11/xorg.conf.d
 
-cat > /usr/local/etc/X11/xorg.conf.d/10-video.conf << 'XORG'
+cat >/usr/local/etc/X11/xorg.conf.d/10-video.conf <<'XORG'
 Section "Device"
     Identifier "Card0"
     Driver "scfb"
@@ -54,19 +54,6 @@ Section "Screen"
     EndSubSection
 EndSection
 XORG
-
-echo "      Utworzono /usr/local/etc/X11/xorg.conf.d/10-video.conf"
-
-cat > /usr/local/etc/X11/xorg.conf.d/00-keyboard.conf << 'XORG'
-Section "InputClass"
-    Identifier "Keyboard Defaults"
-    MatchIsKeyboard "on"
-    Option "XkbLayout" "pl"
-    Option "XkbModel" "pc105"
-EndSection
-XORG
-
-echo "      Utworzono /usr/local/etc/X11/xorg.conf.d/00-keyboard.conf"
 
 # Podsumowanie
 echo ""
