@@ -42,6 +42,10 @@ env LANG=pl_PL.UTF-8 xdg-user-dirs-update --force
 echo "==> backup .profie..."
 cp ~/.profile ~/.profile.bak
 
+echo "==> set to pl keyboard..."
+sudo mkdir -p /usr/local/etc/X11/xorg.conf.d
+cp ~/.dotbsd/freebsd/usr/local/etc/X11/xorg.conf.d/00-keyboard.conf /usr/local/etc/X11/xorg.conf.d/00-keyboard.conf
+
 echo "==> Stowing dotfiles..."
 if [ -d "$HOME/.dotbsd" ]; then
   cd "$HOME/.dotbsd"
