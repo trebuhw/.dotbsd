@@ -6,6 +6,11 @@
     "os",
     "host",
     "kernel",
+    {
+      "type": "command",
+      "key": "OS Age",
+      "text": "/bin/sh /home/hubert/.dotbsd/fastfetch/.config/fastfetch/os_age.sh"
+    },
     "uptime",
     {
       "type": "command",

@@ -97,10 +97,10 @@ alias tofish="sudo chsh -s /usr/local/bin/fish && echo 'Now log out.'" # BSD
 #alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 alias ff='fastfetch'
-alias ffm='fastfetch -c ~/.dotbspwm/fastfetch/.config/fastfetch/hw-config.jsonc'
-alias ffn='fastfetch -l none -c ~/.dotbspwm/fastfetch/.config/fastfetch/no-logo-config.jsonc'
-alias ffo='fastfetch -c ~/.dotbspwm/fastfetch/.config/fastfetch/omarchy-config.jsonc'
-alias ffs='fastfetch -l small -c ~/.dotbspwm/fastfetch/.config/fastfetch/omarchy-small-config.jsonc'
+alias ffm='fastfetch -c ~/.dotbsd/fastfetch/.config/fastfetch/hw-config.jsonc'
+alias ffn='fastfetch -l none -c ~/.dotbsd/fastfetch/.config/fastfetch/no-logo-config.jsonc'
+alias ffo='fastfetch -c ~/.dotbsd/fastfetch/.config/fastfetch/omarchy-config.jsonc'
+alias ffs='fastfetch -l small -c ~/.dotbsd/fastfetch/.config/fastfetch/omarchy-small-config.jsonc'
 
 alias xdus='env LANG=pl_PL.UTF-8 xdg-user-dirs-update --force' # set to xdg-user-dirs pl
 
