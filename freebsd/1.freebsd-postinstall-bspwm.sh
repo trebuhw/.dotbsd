@@ -17,8 +17,8 @@ sudo pkg update -f
 echo "==> Installing packages..."
 sudo pkg install -y \
   bat btop bspwm chromium dbus dunst eza fastfetch feh firefox \
-  fish ghostty git gthumb gvfs kitty lm-sensors neovim nsxiv \
-  numlockx nwg-look picom polybar polkit-gnome  py311-trash-cli rofi \
+  fish ghostty git gthumb gvfs kitty neovim nsxiv \
+  numlockx nwg-look picom polybar polkit-gnome py311-trash-cli rofi \
   sddm starship stow sxhkd thunar thunar-archive-plugin \
   tree unzip vim xarchiver xclip xdg-user-dirs xorg xorg-apps \
   xorg-drivers xorg-fonts xinit xsetroot xrandr yazi \
