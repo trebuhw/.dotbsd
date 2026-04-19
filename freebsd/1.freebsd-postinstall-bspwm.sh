@@ -37,7 +37,7 @@ echo "==> Enabling SDDM..."
 sudo sysrc sddm_enable="YES"
 
 echo "==> Updating XDG user dirs..."
-xdg-user-dirs-update
+env LANG=pl_PL.UTF-8 xdg-user-dirs-update --force
 
 echo "==> Stowing dotfiles..."
 if [ -d "$HOME/.dotbsd" ]; then
