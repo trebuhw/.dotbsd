@@ -1,12 +1,8 @@
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
-
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-#umask 022
+#
+# .profile - Bourne Shell startup script for login shells
+#
+# see also sh(1), environ(7).
+#
 
 # Locale pl > możesz w terminalu wkleic i  sprwadzić polecenia
 # terminal >  setenv LANG pl_PL.UTF-8
@@ -28,20 +24,27 @@ export LC_MESSAGES=pl_PL.UTF-8
 # export LC_MESSAGES="pl_PL.UTF-8"
 # export LC_ALL=pl_PL.UTF-8
 
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-  # include .bashrc if it exists
-  if [ -f "$HOME/.bashrc" ]; then
-    . "$HOME/.bashrc"
-  fi
-fi
+# These are normally set through /etc/login.conf.  You may override them here
+# if wanted.
+# PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:$HOME/bin; export PATH
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ]; then
-  PATH="$HOME/bin:$PATH"
-fi
+# Setting TERM is normally done through /etc/ttys.  Do only override
+# if you're sure that you'll never log in via telnet or xterm or a
+# serial line.
+# TERM=xterm-256color; 	export TERM
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ]; then
-  PATH="$HOME/.local/bin:$PATH"
-fi
+EDITOR=nvim;	export EDITOR
+VISUAL=nvim;  export VISUAL
+PAGER=less;  	export PAGER
+
+# set ENV to a file invoked each time sh is started for interactive use.
+ENV=$HOME/.shrc; export ENV
+
+# Let sh(1) know it's at home, despite /home being a symlink.
+if [ "$PWD" != "$HOME" ] && [ "$PWD" -ef "$HOME" ] ; then cd ; fi
+
+# Query terminal size; useful for serial lines.
+if [ -x /usr/bin/resizewin ] ; then /usr/bin/resizewin -z ; fi
+
+# Display a random cookie on each login.
+if [ -x /usr/bin/fortune ] ; then /usr/bin/fortune freebsd-tips ; fi
