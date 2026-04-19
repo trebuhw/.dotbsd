@@ -102,6 +102,8 @@ alias ffn='fastfetch -l none -c ~/.dotbspwm/fastfetch/.config/fastfetch/no-logo-
 alias ffo='fastfetch -c ~/.dotbspwm/fastfetch/.config/fastfetch/omarchy-config.jsonc'
 alias ffs='fastfetch -l small -c ~/.dotbspwm/fastfetch/.config/fastfetch/omarchy-small-config.jsonc'
 
+alias xdus='env LANG=pl_PL.UTF-8 xdg-user-dirs-update --force' # set to xdg-user-dirs pl
+
 alias po='shutdown -p now'
 alias rb='shutdown -r now'
 alias rh='hyprctl dispatch exit'

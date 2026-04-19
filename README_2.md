@@ -1,2 +1,0 @@
-# .dotbsd
-dotfiles freebsd
