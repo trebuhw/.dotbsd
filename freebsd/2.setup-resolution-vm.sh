@@ -57,6 +57,17 @@ XORG
 
 echo "      Utworzono /usr/local/etc/X11/xorg.conf.d/10-video.conf"
 
+cat > /usr/local/etc/X11/xorg.conf.d/00-keyboard.conf << 'XORG'
+Section "InputClass"
+    Identifier "Keyboard Defaults"
+    MatchIsKeyboard "on"
+    Option "XkbLayout" "pl"
+    Option "XkbModel" "pc105"
+EndSection
+XORG
+
+echo "      Utworzono /usr/local/etc/X11/xorg.conf.d/00-keyboard.conf"
+
 # Podsumowanie
 echo ""
 echo "============================================"
