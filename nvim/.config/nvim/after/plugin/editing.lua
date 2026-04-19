@@ -19,8 +19,11 @@ if ok3 then
     render_md.setup({})
 end
 
--- Markdown-preview
+-- Markdown-preview (install only once)
 vim.g.mkdp_filetypes = { "markdown" }
-vim.defer_fn(function()
-    pcall(vim.cmd, "call mkdp#util#install()")
-end, 100)
+local mp_app = vim.fn.stdpath("data") .. "/plugins/markdown-preview.nvim/app/out"
+if not vim.uv.fs_stat(mp_app) then
+    vim.defer_fn(function()
+        pcall(vim.cmd, "call mkdp#util#install()")
+    end, 100)
+end

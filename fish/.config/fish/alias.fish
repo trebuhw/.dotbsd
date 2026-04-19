@@ -131,7 +131,8 @@ alias dns='systemd-resolve --status' # status DNS
 # -------------------------
 alias v='nvim'
 alias nv='nvim'
-alias f='yazi'
+# alias f='yazi'
+alias f='RUST_BACKTRACE=full yazi 2>/tmp/yazi_err.log'
 alias cat='cat' # Debianie jest batcat
 alias bat='cat -l conf -p'
 alias ag="cat ~/.config/fish/alias.fish | sort | grep"

@@ -32,8 +32,8 @@ opt.fillchars = { eob = " " }
 opt.ignorecase = true
 opt.smartcase = true
 
--- disable mouse
-opt.mouse = ""
+-- mouse support
+opt.mouse = "a"
 
 -- numberline
 opt.number = true
@@ -58,8 +58,12 @@ opt.splitright = true
 -- enable guicolors
 opt.termguicolors = true
 
--- file recovery
-opt.undofile = true
+-- Yank highlight
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+        vim.highlight.on_yank({ higroup = "Visual", timeout = 150 })
+    end,
+})
 
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250

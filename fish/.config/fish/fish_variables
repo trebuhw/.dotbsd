@@ -10,7 +10,7 @@ SETUVAR __fish_initialized:4300
 SETUVAR _fish_abbr_PUP:pacman\x20\x2dSyyu
 SETUVAR _fish_abbr_pup:pacman\x20\x2dSyyu
 SETUVAR _fisher_upgraded_to_4_4:\x1d
-SETUVAR fish_user_paths:/opt/nbfc\x1e/usr/bin\x1e/home/hubert/\x2econfig/suckless/scripts\x1e/home/hubert/\x2econfig/dwm/scripts\x1e/home/hubert/\x2econfig/hypr/scripts\x1e/home/hubert/go/bin\x1e/home/hubert/\x2elocal/bin\x1e/home/hubert/\x2elocal/pipx/venvs/trash\x2dcli/bin\x1e/home/hubert/\x2elocal/pipx/venvs
+SETUVAR fish_user_paths:/home/hubert/\x2econfig/bspwm/scripts\x1e/home/hubert/\x2elocal/share/bin\x1e/usr/local/bin\x1e/opt/nbfc\x1e/usr/bin\x1e/home/hubert/\x2econfig/suckless/scripts\x1e/home/hubert/\x2econfig/dwm/scripts\x1e/home/hubert/\x2econfig/hypr/scripts\x1e/home/hubert/go/bin\x1e/home/hubert/\x2elocal/bin\x1e/home/hubert/\x2elocal/pipx/venvs/trash\x2dcli/bin\x1e/home/hubert/\x2elocal/pipx/venvs
 SETUVAR pure_begin_prompt_with_current_directory:true
 SETUVAR pure_check_for_new_release:false
 SETUVAR pure_color_at_sign:pure_color_mute

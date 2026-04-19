@@ -6,6 +6,9 @@ local function opts(desc)
     return { silent = true, noremap = true, desc = desc }
 end
 
+-- Which-key
+keymap.set("n", "<leader>?", "<cmd>WhichKey<cr>", opts("Show all keybinds"))
+
 -- General
 keymap.set("n", "<leader>a", "gg<S-v>G", opts("Select all"))
 keymap.set("v", "<", "<gv", opts("Indent left"))
@@ -26,8 +29,14 @@ keymap.set("n", "<S-Tab>", ":bprevious<cr>", opts("Previous buffer"))
 keymap.set("n", "<leader>q", ":bd<cr>", opts("Close buffer"))
 
 -- Split generation
-keymap.set("n", "<leader>v", ":vsplit", opts("Vertical split"))
-keymap.set("n", "<leader>s", ":split", opts("Horizontal split"))
+keymap.set("n", "<leader>v", ":vsplit<cr>", opts("Vertical split"))
+keymap.set("n", "<leader>s", ":split<cr>",  opts("Horizontal split"))
+
+-- Split navigation
+keymap.set("n", "<C-h>", "<C-w>h", opts("Split left"))
+keymap.set("n", "<C-l>", "<C-w>l", opts("Split right"))
+keymap.set("n", "<C-j>", "<C-w>j", opts("Split down"))
+keymap.set("n", "<C-k>", "<C-w>k", opts("Split up"))
 
 -- Resize splits
 keymap.set("n", "<C-Left>", ":vertical resize +3<cr>", opts("Resize left"))
