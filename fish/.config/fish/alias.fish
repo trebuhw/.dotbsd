@@ -162,7 +162,7 @@ alias obr='cd ~/Obrazy/ && l'
 alias muz='cd ~/Muzyka/ && l'
 alias pob='cd ~/Pobrane/ && l'
 alias sha='cd ~/Shared/ && l'
-alias dot='cd ~/.dotbspwm/ && la'
+alias dot='cd ~/.dotbsd/ && la'
 alias dotp='cd ~/.dotbspwm-prv/ && l'
 alias con='cd ~/.config && l'
 alias bin='cd ~/.local/share/bin/ && l'
@@ -205,7 +205,6 @@ alias mgup='mgs; mga .; mgcom "up"; mgpush'
 alias mgpush='~/Dokumenty/Git/my-git-push.sh'
 alias mgpull='~/Dokumenty/Git/my-git-pull.sh'
 alias mgacp='~/Dokumenty/Git/my-git-acp.sh'
-alias gbf='/usr/bin/git --git-dir=$HOME/.dotbspwm/ --work-tree=$HOME fetch origin'
 
 # -------------------------
 # DEBIAN
